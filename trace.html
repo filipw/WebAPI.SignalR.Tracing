@@ -16,11 +16,11 @@
         <script type="text/javascript">
             $(function () {
                 hub = $.connection.trace;
-                $.connection.hub.start();
-
                 hub.client.logMessage = function (data) {
                         $('#messages').prepend('<li>' + data + '</li>');
                 };
+
+                $.connection.hub.start();
             });
 </script>
 </html>
