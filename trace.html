@@ -10,7 +10,7 @@
 </body>
 
 <script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
-<script type="text/javascript" src="Scripts/jquery.signalR-0.5rc.js"></script>
+<script type="text/javascript" src="Scripts/jquery.signalR-1.0.0-alpha2.js"></script>
 <script type="text/javascript" src="signalr/hubs"></script>
 
         <script type="text/javascript">
@@ -18,7 +18,7 @@
                 hub = $.connection.trace;
                 $.connection.hub.start();
 
-                hub.logMessage = function (data) {
+                hub.client.logMessage = function (data) {
                         $('#messages').prepend('<li>' + data + '</li>');
                 };
             });

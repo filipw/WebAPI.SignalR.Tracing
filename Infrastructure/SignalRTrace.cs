@@ -1,6 +1,4 @@
-﻿using SignalR;
-using SignalR.Hubs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -40,7 +38,7 @@ namespace WebApi.SignalR.Tracing.Infrastructure
             if (record.Exception != null)
                 message.AppendMessage(record.Exception.GetBaseException().Message, notEmpty);
 
-            Hub.Clients.logMessage(message.ToString());
+            Hub.Clients.All.logMessage(message.ToString());
         }
 
         Func<string, bool> notEmpty = (text) => !string.IsNullOrWhiteSpace(text);
